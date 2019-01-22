@@ -1,0 +1,70 @@
+﻿Bonjour / Bonsoir Monsieur Mazure.
+
+Voici le rendu du projet myShell pour le groupe : FRANCO Andréa et SERF Nicolas
+Vous trouverez dans la suite du mail les différents points importants pour le projet :
+
+- Les fonctionnalités implémentées :
+
+Toutes les fonctionnalités présentes sur la feuille semblent être disponibles et sans bug apparent dans des utilisations correctes et nous avons essayé de gérer autant que possibles les différentes erreurs possibles.
+
+- Les fonctionnalités non implémentées :
+
+Toutes les fonctionnalités de la feuille ayant été implémentées, sauf oublie de notre part, il n'y a pas de fonctionnalité qui n'ont pas été implementée.
+
+- Les bugs connus :
+
+Durant nos différents tests au cours du développement et durant la phase de test, nous n'avons rencontré aucun bug significatif.
+
+- Général :
+
+Nous avons compilé avec les principaux flags pour assurer le moins d'erreur et le plus de propreté possible : -Wall -Wextra -pedantic
+
+Valgrind durant nos différents tests nous a donné 0 erreur de contexte et aucun leak de mémoire de maniére générale.
+
+- Difficultés:
+
+Les principales difficultés rencontrés ont été : 
+* L'organisation du code pour que tous s'assemblable bien.
+* L'interprétation des wildcards avec les différents paths.
+* La gestion des processus de maniére général et des signaux venant interrompre le fonctionnement.
+* Le comment gérer les variables d'environnement
+
+- Répartition :
+
+Le pourcentage ne nous parait pas facile à déterminer. Cependant, nous avons toujours travaillé en même temps durant toute la durée du projet sauf pendant la semaine des révisions où il n'y a que Nicolas qui a travaillé.
+
+Pour Andréa :
+
+- myLs
+- myPs
+- cd
+- myjobs
+- Algorithme pour trouver les différents chemins matchant avec un chemin donné (avec wildcards).
+- status 
+- Sortie du shell
+
+
+Pour Nicolas :
+
+- Lancement de commandes
+- Séquencement
+- Implémentation des wildcards via automate
+- Redirection
+- Pipe
+- Premier plan / arriére plan (&)
+- Variables locales et environnement
+- Passage premier plan / arriére plan (myfg, mybg)
+
+Pour les 2 :
+
+- Correction des bugs sur les différentes parties du programme
+- Réalisation des tests.
+
+A noter :
+
+Comme discuté durant les mails, nous ne savons pas comment détacher un processus du terminal courant, et les signaux étant propagés aux différents processus appartenant au terminal courant, nous n'avons pas pu intercepter les CTRL+C et CTRL+Z dans des cas qui peuvent poser probléme (ie : CTRL+C coupe tous les processus en arriére plan et demande ensuite la confirmation (mais fonctionne avec kill SIGINT)), et un CTRL+Z alors qu'un processus est en arriére plan pose aussi problème puisqu'on ne peut pas intercepter ce signal et il va donc venir perturber le processus en arrière plan.
+
+Merci, bonne soirée et joyeux réveillon. 
+
+Andréa Franco et Nicolas Serf
+
